@@ -1,4 +1,4 @@
-% LLNCS DOCUMENT CLASS -- version 2.24 (29-Jan-2024)
+% LLNCS DOCUMENT CLASS -- version 2.20 (10-Mar-2018)
 % Springer Verlag LaTeX2e support for Lecture Notes in Computer Science
 %
 %%
@@ -19,7 +19,7 @@
 %%   Right brace   \}     Tilde         \~}
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{llncs}[2024/01/29 v2.24
+\ProvidesClass{llncs}[2018/03/10 v2.20
 ^^J LaTeX document class for Lecture Notes in Computer Science]
 % Options
 \let\if@envcntreset\iffalse
@@ -78,7 +78,7 @@
 %
 \def\switcht@albion{%
 \def\abstractname{Abstract.}
-\def\ackname{Acknowledgments.}
+\def\ackname{Acknowledgement.}
 \def\andname{and}
 \def\lastandname{\unskip, and}
 \def\appendixname{Appendix}
@@ -88,7 +88,6 @@
 \def\contentsname{Table of Contents}
 \def\corollaryname{Corollary}
 \def\definitionname{Definition}
-\def\discintname{Disclosure of Interests.}
 \def\examplename{Example}
 \def\exercisename{Exercise}
 \def\figurename{Fig.}
@@ -123,24 +122,23 @@
  \def\ackname{Remerciements.}%
  \def\andname{et}%
  \def\lastandname{ et}%
- \def\appendixname{Appendice}%
+ \def\appendixname{Appendice}
  \def\chaptername{Chapitre}%
  \def\claimname{Pr\'etention}%
  \def\conjecturename{Hypoth\`ese}%
  \def\contentsname{Table des mati\`eres}%
  \def\corollaryname{Corollaire}%
  \def\definitionname{D\'efinition}%
- \def\discintname{Mention des Int\'{e}r\^{e}ts.}
  \def\examplename{Exemple}%
  \def\exercisename{Exercice}%
  \def\figurename{Fig.}%
- \def\keywordname{{\bf Mots-cl\'e:}}%
- \def\indexname{Index}%
+ \def\keywordname{{\bf Mots-cl\'e:}}
+ \def\indexname{Index}
  \def\lemmaname{Lemme}%
- \def\contriblistname{Liste des contributeurs}%
+ \def\contriblistname{Liste des contributeurs}
  \def\listfigurename{Liste des figures}%
  \def\listtablename{Liste des tables}%
- \def\mailname{{\it Correspondence to\/}:}%
+ \def\mailname{{\it Correspondence to\/}:}
  \def\noteaddname{Note ajout\'ee \`a l'\'epreuve}%
  \def\notename{Remarque}%
  \def\partname{Partie}%
@@ -150,9 +148,9 @@
 %\def\propositionname{Proposition}%
  \def\questionname{Question}%
  \def\remarkname{Remarque}%
- \def\seename{voir}%
+ \def\seename{voir}
  \def\solutionname{Solution}%
- \def\subclassname{{\it Subject Classifications\/}:}%
+ \def\subclassname{{\it Subject Classifications\/}:}
  \def\tablename{Tableau}%
  \def\theoremname{Th\'eor\`eme}%
 }
@@ -170,17 +168,16 @@
  \def\contentsname{Inhaltsverzeichnis}%
  \def\corollaryname{Korollar}%
 %\def\definitionname{Definition}%
- \def\discintname{Offenlegung von Interessen.}
  \def\examplename{Beispiel}%
  \def\exercisename{\"Ubung}%
  \def\figurename{Abb.}%
- \def\keywordname{{\bf Schl\"usselw\"orter:}}%
- \def\indexname{Index}%
+ \def\keywordname{{\bf Schl\"usselw\"orter:}}
+ \def\indexname{Index}
 %\def\lemmaname{Lemma}%
- \def\contriblistname{Mitarbeiter}%
+ \def\contriblistname{Mitarbeiter}
  \def\listfigurename{Abbildungsverzeichnis}%
  \def\listtablename{Tabellenverzeichnis}%
- \def\mailname{{\it Correspondence to\/}:}%
+ \def\mailname{{\it Correspondence to\/}:}
  \def\noteaddname{Nachtrag}%
  \def\notename{Anmerkung}%
  \def\partname{Teil}%
@@ -190,9 +187,9 @@
 %\def\propositionname{Proposition}%
  \def\questionname{Frage}%
  \def\remarkname{Anmerkung}%
- \def\seename{siehe}%
+ \def\seename{siehe}
  \def\solutionname{L\"osung}%
- \def\subclassname{{\it Subject Classifications\/}:}%
+ \def\subclassname{{\it Subject Classifications\/}:}
  \def\tablename{Tabelle}%
 %\def\theoremname{Theorem}%
 }
@@ -212,20 +209,6 @@
                \itemsep0\p@}%
    \belowdisplayskip \abovedisplayskip
 }
-
-% Switch to small font size for the credits at the end of the paper
-% (i.e. Acknowlegments and Disclosure of Interests)
-\newenvironment{credits}{%
-\begingroup\small%
-\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-        {-12\p@ \@plus -4\p@ \@minus -4\p@}%
-        {-0.5em \@plus -0.22em \@minus -0.1em}%
-        {\normalfont\small\bfseries\boldmath}}
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-        {-8\p@ \@plus -4\p@ \@minus -4\p@}%
-        {-0.5em \@plus -0.22em \@minus -0.1em}%
-        {\normalfont\small\itshape}}%
-}{\endgroup}
 
 \frenchspacing
 \widowpenalty=10000
@@ -391,7 +374,7 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 \let\footnotesize\small
 
 \if@custvec
-\DeclareRobustCommand\vec[1]{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
 {\mbox{\boldmath$\textstyle#1$}}
 {\mbox{\boldmath$\scriptstyle#1$}}
 {\mbox{\boldmath$\scriptscriptstyle#1$}}}
@@ -907,8 +890,8 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 \par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}%
 \@ifpackageloaded{hyperref}{%
-\def\doi#1{\href{https://doi.org/\detokenize{#1}}{\url{https://doi.org/#1}}}}{
-\def\doi#1{https://doi.org/\detokenize{#1}}}
+\def\doi#1{\href{https://doi.org/#1}{https://doi.org/#1}}}{
+\def\doi#1{https://doi.org/#1}}
 }
 \def\homedir{\~{ }}
 
@@ -1055,25 +1038,17 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\edef\@thmcountersep{}
-\edef\@thmcounterend{.}
+\def\@thmcountersep{}
+\def\@thmcounterend{.}
 
 \def\spnewtheorem{\@ifstar{\@sthm}{\@Sthm}}
 
 % definition of \spnewtheorem with number
 
-\def\@spnthm#1#2{\@ifnextchar[{\@spxnthm{#1}{#2}}{\@spynthm{#1}{#2}}}
+\def\@spnthm#1#2{%
+  \@ifnextchar[{\@spxnthm{#1}{#2}}{\@spynthm{#1}{#2}}}
 \def\@Sthm#1{\@ifnextchar[{\@spothm{#1}}{\@spnthm{#1}}}
 
-% theorem-like environment with standard counter
-\def\@spynthm#1#2#3#4{\expandafter\@ifdefinable\csname #1\endcsname
-   {\@definecounter{#1}%
-   \expandafter\xdef\csname the#1\endcsname{\@thmcounter{#1}}%
-   \expandafter\xdef\csname #1name\endcsname{#2}%
-   \global\@namedef{#1}{\@spthm{#1}{\csname #1name\endcsname}{#3}{#4}}%
-                               \global\@namedef{end#1}{\@endtheorem}}}
-
-% theorem-like environment with section-wise counter (envcountsect)
 \def\@spxnthm#1#2[#3]#4#5{\expandafter\@ifdefinable\csname #1\endcsname
    {\@definecounter{#1}\@addtoreset{#1}{#3}%
    \expandafter\xdef\csname the#1\endcsname{\expandafter\noexpand
@@ -1082,21 +1057,20 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
    \global\@namedef{#1}{\@spthm{#1}{\csname #1name\endcsname}{#4}{#5}}%
                               \global\@namedef{end#1}{\@endtheorem}}}
 
-% theorem-like environment with shared counter (envcountsame)
+\def\@spynthm#1#2#3#4{\expandafter\@ifdefinable\csname #1\endcsname
+   {\@definecounter{#1}%
+   \expandafter\xdef\csname the#1\endcsname{\@thmcounter{#1}}%
+   \expandafter\xdef\csname #1name\endcsname{#2}%
+   \global\@namedef{#1}{\@spthm{#1}{\csname #1name\endcsname}{#3}{#4}}%
+                               \global\@namedef{end#1}{\@endtheorem}}}
+
 \def\@spothm#1[#2]#3#4#5{%
   \@ifundefined{c@#2}{\@latexerr{No theorem environment `#2' defined}\@eha}%
   {\expandafter\@ifdefinable\csname #1\endcsname
   {\newaliascnt{#1}{#2}%
   \expandafter\xdef\csname #1name\endcsname{#3}%
-  \if@envcntsect
-    % the following line, introduced in v2.24, fixes incorrect hypertexnames
-    % when envcountsect is used in combination with envcountsame
-    \@addtoreset{#1}{section}
-  \fi
   \global\@namedef{#1}{\@spthm{#1}{\csname #1name\endcsname}{#4}{#5}}%
   \global\@namedef{end#1}{\@endtheorem}}}}
-
-
 
 \def\@spthm#1#2#3#4{\topsep 7\p@ \@plus2\p@ \@minus4\p@
 \refstepcounter{#1}%
@@ -1149,7 +1123,7 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
    \fi
 \fi
 
-%definition of various theorem environments
+%definition of divers theorem environments
 \spnewtheorem*{claim}{Claim}{\itshape}{\rmfamily}
 \spnewtheorem*{proof}{Proof}{\itshape}{\rmfamily}
 \if@envcntsame % alle Umgebungen wie Theorem.
